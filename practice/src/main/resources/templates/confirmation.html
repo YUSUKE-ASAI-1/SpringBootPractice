@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ内容の確認</title>
+</head>
+<body>
+  <h1>お問い合わせ内容の確認</h1>
+  <form action="register" method="post">
+    <table border="1">
+      <tr>
+        <td>姓</td>
+        <td>
+          <span th:text="${lastName}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>名</td>
+        <td>
+          <span th:text="${firstName}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td>
+          <span th:text="${email}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td>
+          <span th:text="${phone}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>郵便番号</td>
+        <td>
+          <span th:text="${zipCode}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>住所</td>
+        <td>
+          <span th:text="${address}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>建物名</td>
+        <td>
+          <span th:text="${buildingName}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>お問い合わせ種別</td>
+        <td>
+          <span th:text="${contactType}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>お問い合わせ内容</td>
+        <td>
+          <span th:text="${body}"></span>
+        </td>
+      </tr>
+      </table>
+  </form>
+</body>
+</html>
