@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>お問い合わせ詳細</title>
+</head>
+
+<body>
+	<h1>お問い合わせ詳細</h1>
+	<table>
+		<tr>
+			<th>お問い合わせID</th>
+			<td th:text="${contact.id}"></td>
+		</tr>
+		<tr>
+			<th>姓</th>
+			<td th:text="${contact.lastName}"></td>
+		</tr>
+		<tr>
+			<th>名</th>
+			<td th:text="${contact.firstName}"></td>
+		</tr>
+		<tr>
+			<th>メールアドレス</th>
+			<td th:text="${contact.email}"></td>
+		</tr>
+		<tr>
+			<th>電話番号</th>
+			<td th:text="${contact.phone}"></td>
+		</tr>
+		<tr>
+			<th>郵便番号</th>
+			<td th:text="${contact.zipCode}"></td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td th:text="${contact.address}"></td>
+		</tr>
+		<tr>
+			<th>建物名</th>
+			<td th:text="${contact.buildingName}"></td>
+		</tr>
+		<tr>
+			<th>お問い合わせ種別</th>
+			<td th:text="${contact.contactType}"></td>
+		</tr>
+		<tr>
+			<th>内容</th>
+			<td th:text="${contact.body}"></td>
+		</tr>
+		<tr>
+			<th>作成日時</th>
+			<td th:text="${contact.createdAt}"></td>
+		</tr>
+		<tr>
+			<th>更新日時</th>
+			<td th:text="${contact.updatedAt}"></td>
+		</tr>
+	</table>
+
+	<a th:href="@{/admin/contacts/{id}/edit(id=${contact.id})}">編集</a>
+
+	<form th:action="@{/logout}" method="post">
+		<button type="submit">ログアウト</button>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ編集</title>
+</head>
+<body>
+    <h1>お問い合わせ編集</h1>
+
+	<form th:action="@{/admin/contacts/{id}/edit(id=${contactId})}" method="post" th:object="${contactForm}">
+        <div>
+            <label for="lastName">姓:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" required>
+            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+        </div>
+
+        <div>
+            <label for="firstName">名:</label>
+            <input type="text" id="firstName" th:field="*{firstName}" required>
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+        </div>
+
+        <div>
+            <label for="email">メールアドレス:</label>
+            <input type="email" id="email" th:field="*{email}" required>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+        <div>
+            <label for="phone">電話番号:</label>
+            <input type="text" id="phone" th:field="*{phone}" required>
+            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+        </div>
+
+        <div>
+            <label for="zipCode">郵便番号:</label>
+            <input type="text" id="zipCode" th:field="*{zipCode}" required>
+            <span th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}"></span>
+        </div>
+
+        <div>
+            <label for="address">住所:</label>
+            <input type="text" id="address" th:field="*{address}" required>
+            <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+        </div>
+
+        <div>
+            <label for="buildingName">建物名:</label>
+            <input type="text" id="buildingName" th:field="*{buildingName}" required>
+        </div>
+
+        <div>
+            <label for="contactType">お問い合わせ種別:</label>
+            <input type="text" id="contactType" th:field="*{contactType}" required>
+            <span th:if="${#fields.hasErrors('contactType')}" th:errors="*{contactType}"></span>
+        </div>
+
+        <div>
+            <label for="body">内容:</label>
+            <textarea id="body" th:field="*{body}" required></textarea>
+            <span th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></span>
+        </div>
+
+        <div>
+            <button type="submit">更新</button>
+        </div>
+    </form>
+
+	<form th:action="@{/admin/contacts/{id}(id=${contactId})}" method="post">
+	    <input type="hidden" name="_method" value="DELETE">
+	    <button type="submit">削除</button>
+	</form>
+
+    <div>
+        <a href="/admin/logout">ログアウト</a>
+    </div>
+</body>
+</html>
